@@ -4,7 +4,6 @@ const AuctionList = () => import('../views/AuctionList')
 const routes = [
   {
     path: '/',
-    // component: App,
     redirect: '/list'
   },
   {
