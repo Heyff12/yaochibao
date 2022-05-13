@@ -45,7 +45,6 @@ export default {
   methods: {},
   created() {
     this.$store.dispatch("getAuctionList");
-    console.log(this.getAuctionListSuccess);
   },
 };
 </script>
