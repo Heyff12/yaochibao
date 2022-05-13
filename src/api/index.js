@@ -94,7 +94,7 @@ const auctionList = [
 export default {
   async getAuctionList() {
     await wait(100);
-    return [] || auctionList;
+    return auctionList;
   },
 };
 

@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section v-if="getAuctionListSuccess">
     <section class="auction-list" v-if="auctionList.length">
       <section
         class="auction-item"
@@ -27,8 +27,10 @@
         </section>
       </section>
     </section>
-    <section class="no-data" v-else>对不起，当前没有可以竞买的拍品</section>
+    <section class="tips" v-else>对不起，当前没有可以竞买的拍品</section>
   </section>
+
+  <section class="tips" v-else>服务异常，请稍后再试</section>
 </template>
 
 <script>
@@ -38,10 +40,12 @@ export default {
   name: "AuctionList",
   computed: mapState({
     auctionList: (state) => state.auctionList,
+    getAuctionListSuccess: (state) => state.getAuctionListSuccess,
   }),
   methods: {},
   created() {
     this.$store.dispatch("getAuctionList");
+    console.log(this.getAuctionListSuccess);
   },
 };
 </script>
@@ -94,7 +98,7 @@ export default {
     }
   }
 }
-.no-data {
+.tips {
   width: 100%;
   height: 500px;
   display: flex;

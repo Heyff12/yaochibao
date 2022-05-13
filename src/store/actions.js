@@ -5,10 +5,16 @@ const actions = {
   async getAuctionList({ commit }) {
     try {
       const data = await api.getAuctionList();
-      commit(TYPES.SET_AUCTION_LIST, data);
+      commit(TYPES.SET_AUCTION_LIST, {
+        auctionList: data,
+        isHttpSuccess: true,
+      });
     } catch (e) {
       console.error(e);
-      commit(TYPES.SET_AUCTION_LIST, []);
+      commit(TYPES.SET_AUCTION_LIST, {
+        auctionList: [],
+        isHttpSuccess: false,
+      });
     }
   },
 };
