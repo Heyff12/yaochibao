@@ -1,23 +1,22 @@
-import {createRouter,createWebHashHistory} from 'vue-router'
+import { createRouter, createWebHashHistory } from "vue-router";
 
-const AuctionList = () => import('../views/AuctionList')
+const AuctionList = () => import("../views/AuctionList");
 const routes = [
   {
-    path: '/',
-    redirect: '/list'
+    path: "/",
+    redirect: "/list",
   },
   {
-    path: '/list',
-    name: 'AuctionList',
-    component: AuctionList
-  }
-]
-
+    path: "/list",
+    name: "AuctionList",
+    component: AuctionList,
+  },
+];
 
 const router = createRouter({
-  base: '/',
+  base: "/",
   history: createWebHashHistory(),
-  routes, 
-})
+  routes,
+});
 
-export  {router}
+export { router };

@@ -1,23 +1,21 @@
 <template>
-  <img alt="Vue logo" src="../assets/logo.png">
-  {{auctionList}}
+  <img alt="Vue logo" src="../assets/logo.png" />
+  {{ auctionList }}
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState } from "vuex";
 
 export default {
-  name: 'AuctionList',
+  name: "AuctionList",
   computed: mapState({
-    auctionList: state => state.auctionList
+    auctionList: (state) => state.auctionList,
   }),
-  methods: {
+  methods: {},
+  created() {
+    this.$store.dispatch("getAuctionList");
   },
-  created () {
-    this.$store.dispatch('getAuctionList')
-  }
-}
+};
 </script>
 
-<style lang="less">
-</style>
+<style lang="less"></style>
