@@ -36,3 +36,4 @@ yarn test-api
 ### 备注
 * 完善测试覆盖率
 * 关闭json-server服务
+* store 配置modules
