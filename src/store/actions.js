@@ -6,7 +6,7 @@ const actions = {
     try {
       const data = await api.getAuctionList();
       commit(TYPES.SET_AUCTION_LIST, {
-        auctionList: data,
+        auctionList: data.slice(0, 5),
         isHttpSuccess: true,
       });
     } catch (e) {

@@ -62,7 +62,7 @@ const successHalfService = () => {
   return Promise.resolve(data.data);
 };
 
-const successFullService = () => {
+const successOverFullService = () => {
   const data = {
     status: 200,
     data: [
@@ -116,6 +116,16 @@ const successFullService = () => {
         thumbnail:
           "http://t15.baidu.com/it/u=3672761728,3963104431&fm=224&app=112&f=JPEG?w=500&h=500",
       },
+      {
+        aid: "00003",
+        name: "海洋之心",
+        type: "jewel",
+        price: "100000",
+        detail:
+          "电影《泰坦尼克号》的故事情节中， “海洋之心”项链便是采用坦桑石来进行客串演绎的，坦桑石呈现出了海洋般的深邃与美丽，是名副其实的“海洋之心”。",
+        thumbnail:
+          "http://t15.baidu.com/it/u=3672761728,3963104431&fm=224&app=112&f=JPEG?w=500&h=500",
+      },
     ],
   };
   return Promise.resolve(data.data);
@@ -156,7 +166,7 @@ describe("Component", () => {
   });
 
   test("show 5 item when auctionList's length is 5", async () => {
-    jest.spyOn(api, "getAuctionList").mockReturnValue(successFullService());
+    jest.spyOn(api, "getAuctionList").mockReturnValue(successOverFullService());
     const wrapper = mount(Component, {
       global: {
         plugins: [store],
