@@ -7,7 +7,8 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "mock-serve": "json-server --watch db.json",
-    "test": "jest"
+    "test": "jest _test_/components",
+    "test-api": "NODE_ENV=test & json-server --watch _test_/api/db.json --port 3001 & jest _test_/api"
   },
   "dependencies": {
     "axios": "^0.27.2",

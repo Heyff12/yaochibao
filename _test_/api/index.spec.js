@@ -1,4 +1,4 @@
-import api from "../../../src/api";
+import api from "../../src/api";
 
 describe("Api test", () => {
   describe("getAuctionList", () => {
@@ -11,8 +11,9 @@ describe("Api test", () => {
     test("return error", async () => {
       const fn = jest.fn();
       try {
-        await api.getAuctionList();
+        await api.getAuctionList("test");
       } catch (err) {
+        console.log(err);
         fn();
       }
       expect(fn).toHaveBeenCalled();
