@@ -13,7 +13,7 @@ module.exports = {
   testMatch: ["<rootDir>/_test_/**/*.spec.js"],
   collectCoverage: true,
   collectCoverageFrom: [
-    "<rootDir>/src/**/*.vue",
+    "<rootDir>/src/views/**/*.vue",
     "<rootDir>/src/utils/**/*.js",
     "!**/node_modules/**",
   ],

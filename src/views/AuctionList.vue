@@ -1,6 +1,6 @@
 <template>
   <section v-if="getAuctionListSuccess">
-    <section class="auction-list" v-if="auctionList.length">
+    <section class="auction-list" id="list" v-if="auctionList.length">
       <section
         class="auction-item"
         v-for="auction in auctionList"
@@ -44,9 +44,13 @@ export default {
     auctionList: (state) => state.auctionList,
     getAuctionListSuccess: (state) => state.getAuctionListSuccess,
   }),
-  methods: {},
   created() {
-    this.$store.dispatch("getAuctionList");
+    this.getAuctionList();
+  },
+  methods: {
+    getAuctionList() {
+      this.$store.dispatch("getAuctionList");
+    },
   },
 };
 </script>
