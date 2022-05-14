@@ -11,7 +11,7 @@ module.exports = {
     ".*\\.(vue)$": "@vue/vue3-jest",
   },
   testMatch: ["<rootDir>/_test_/**/*.spec.js"],
-  collectCoverage: true,
+  collectCoverage: false,
   collectCoverageFrom: [
     "<rootDir>/src/views/**/*.vue",
     "<rootDir>/src/utils/**/*.js",
