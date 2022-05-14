@@ -8,8 +8,20 @@ module.exports = {
     "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
     ".*\\.(vue)$": "@vue/vue3-jest",
   },
-  testMatch: ["<rootDir>/test/**/*.spec.js"],
+  testMatch: ["<rootDir>/_test_/**/*.spec.js"],
   collectCoverage: true,
-  collectCoverageFrom: ["<rootDir>/src/**/*.{js,vue}", "!**/node_modules/**"],
+  collectCoverageFrom: [
+    "<rootDir>/src/utils/*.js",
+    "<rootDir>/src/**/*.vue",
+    "!**/node_modules/**",
+  ],
   coverageDirectory: "<rootDir>/coverage",
+  coverageThreshold: {
+    global: {
+      branches: 80,
+      functions: 80,
+      lines: 80,
+      statements: 80,
+    },
+  },
 };
