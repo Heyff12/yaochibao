@@ -1,7 +1,9 @@
 module.exports = {
   rootDir: __dirname,
+  verbose: true,
+  testEnvironment: "jsdom",
   moduleNameMapper: {
-    "^vue$": "vue/dist/vue.common.js",
+    // "^vue$": "vue/dist/vue.common.js",
   },
   moduleFileExtensions: ["js", "vue"],
   transform: {
@@ -11,8 +13,8 @@ module.exports = {
   testMatch: ["<rootDir>/_test_/**/*.spec.js"],
   collectCoverage: true,
   collectCoverageFrom: [
-    "<rootDir>/src/utils/*.js",
     "<rootDir>/src/**/*.vue",
+    "<rootDir>/src/utils/**/*.js",
     "!**/node_modules/**",
   ],
   coverageDirectory: "<rootDir>/coverage",

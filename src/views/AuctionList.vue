@@ -27,10 +27,12 @@
         </section>
       </section>
     </section>
-    <section class="tips" v-else>对不起，当前没有可以竞买的拍品</section>
+    <section class="tips" id="noData" v-else>
+      对不起，当前没有可以竞买的拍品
+    </section>
   </section>
 
-  <section class="tips" v-else>服务异常，请稍后再试</section>
+  <section class="tips" id="serverError" v-else>服务异常，请稍后再试</section>
 </template>
 
 <script>
