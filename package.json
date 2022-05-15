@@ -10,6 +10,12 @@
     "test": "jest _test_/components",
     "test-api": "NODE_ENV=test & json-server --watch _test_/api/db.json --port 3001 & jest _test_/api"
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn test & yarn build",
+      "pre-commit": "yarn lint"
+    }
+  },
   "dependencies": {
     "axios": "^0.27.2",
     "core-js": "^3.8.3",
@@ -31,6 +37,7 @@
     "babel-jest": "27.5.1",
     "eslint": "^8.15.0",
     "eslint-plugin-vue": "^8.0.3",
+    "husky": "^8.0.1",
     "jest": "27.5.1",
     "json-server": "^0.17.0",
     "less": "^4.1.2",
