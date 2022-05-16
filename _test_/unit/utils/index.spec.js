@@ -1,4 +1,4 @@
-import { sum } from "../../../src/utils";
+import { sum } from "../../../src/utils/index.js";
 
 test("sum", () => {
   const a = sum(1, 2);

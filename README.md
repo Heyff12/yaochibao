@@ -23,6 +23,10 @@ yarn lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
+### husky
+pre-commit-- yarn lint
+pre-push-- yarn test & yarn build
+
 ### 组建测试
 ```
 yarn test
