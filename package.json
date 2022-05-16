@@ -10,7 +10,8 @@
     "test": "jest _test_/components _test_/unit",
     "test-api": "NODE_ENV=test & json-server --watch _test_/api/db.json --port 3001 & jest _test_/api",
     "prepare": "husky install",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "cypress:open": "cypress open"
   },
   "husky": {
     "hooks": {
@@ -39,6 +40,7 @@
     "@vue/vue3-jest": "^27.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "27.5.1",
+    "cypress": "^9.6.1",
     "eslint": "^8.15.0",
     "eslint-plugin-vue": "^8.0.3",
     "husky": "^8.0.1",
