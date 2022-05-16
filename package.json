@@ -9,7 +9,8 @@
     "mock-serve": "json-server --watch db.json",
     "test": "jest _test_/components _test_/unit",
     "test-api": "NODE_ENV=test & json-server --watch _test_/api/db.json --port 3001 & jest _test_/api",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "postinstall": "husky install"
   },
   "husky": {
     "hooks": {
@@ -28,6 +29,8 @@
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
+    "@commitlint/cli": "^16.3.0",
+    "@commitlint/config-conventional": "^16.2.4",
     "@testing-library/vue": "^5.8.3",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
@@ -42,7 +45,8 @@
     "jest": "27.5.1",
     "json-server": "^0.17.0",
     "less": "^4.1.2",
-    "less-loader": "^10.2.0"
+    "less-loader": "^10.2.0",
+    "pinst": "^3.0.0"
   },
   "eslintConfig": {
     "root": true,

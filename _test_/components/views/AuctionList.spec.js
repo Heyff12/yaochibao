@@ -1,7 +1,7 @@
 import { mount } from "@vue/test-utils";
 import { store } from "../../../src/store";
 import api from "../../../src/api";
-import Component from "../../../src/views/AuctionList.vue";
+import Component from "../../../src/views/auctionList.vue";
 
 const flushPromises = () => Promise.resolve();
 

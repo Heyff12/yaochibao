@@ -38,6 +38,6 @@ yarn test
 yarn test-api
 ```
 ### 备注
-* 完善测试覆盖率
+* 完善测试--文件名显示错误
 * 关闭json-server服务
 * store 配置modules
