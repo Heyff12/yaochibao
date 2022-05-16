@@ -1,38 +1,53 @@
 <template>
-  <section v-if="getAuctionListSuccess">
-    <section class="auction-list" id="list" v-if="auctionList.length">
+  <section>
+    <section v-if="getAuctionListSuccess">
       <section
-        class="auction-item"
-        v-for="auction in auctionList"
-        :key="auction.aid"
+        v-if="auctionList.length"
+        id="list"
+        class="auction-list"
       >
-        <section class="pic">
-          <img :src="auction.thumbnail" alt="" />
-        </section>
-        <section class="desc">
-          <p class="title">
-            <a href="#">{{ auction.name }}</a>
-          </p>
-          <p class="detail">
-            {{ auction.detail }}
-          </p>
-          <p class="other">
-            <span
-              >类型：<i>{{ auction.type }}</i></span
+        <section
+          v-for="auction in auctionList"
+          :key="auction.aid"
+          class="auction-item"
+        >
+          <section class="pic">
+            <img
+              :src="auction.thumbnail"
+              alt=""
             >
-            <span
-              >估值：<i>￥{{ auction.price }}</i></span
-            >
-          </p>
+          </section>
+          <section class="desc">
+            <p class="title">
+              <a href="#">{{ auction.name }}</a>
+            </p>
+            <p class="detail">
+              {{ auction.detail }}
+            </p>
+            <p class="other">
+              <span>类型：<i>{{ auction.type }}</i></span>
+              <span>估值：<i>￥{{ auction.price }}</i></span>
+            </p>
+          </section>
         </section>
       </section>
+      <section
+        v-else
+        id="noData"
+        class="tips"
+      >
+        对不起，当前没有可以竞买的拍品
+      </section>
     </section>
-    <section class="tips" id="noData" v-else>
-      对不起，当前没有可以竞买的拍品
+
+    <section
+      v-else
+      id="serverError"
+      class="tips"
+    >
+      服务异常，请稍后再试
     </section>
   </section>
-
-  <section class="tips" id="serverError" v-else>服务异常，请稍后再试</section>
 </template>
 
 <script>

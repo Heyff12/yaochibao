@@ -11,7 +11,7 @@ export default {
     try {
       const currentPath = testPath
         ? `auction-bidder${testPath}`
-        : `auction-bidder`;
+        : "auction-bidder";
       const { data } = await axios.get(`${baseUrl}/${currentPath}`);
       return data;
     } catch (e) {

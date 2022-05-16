@@ -1,6 +1,8 @@
 <template>
-  <h1>拍一拍</h1>
-  <router-view></router-view>
+  <section>
+    <h1>拍一拍</h1>
+    <router-view />
+  </section>
 </template>
 
 <script>
