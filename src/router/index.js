@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 
-const AuctionList = () => import("../views/AuctionList");
+const AuctionList = () => import("../views/auctionList");
 const routes = [
   {
     path: "/",
