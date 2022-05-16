@@ -26,7 +26,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### husky
 pre-commit-- yarn lint
 pre-push-- yarn test & yarn build
-commit-msg
+commit-msg: type: message
 
 ### 组建测试
 ```
