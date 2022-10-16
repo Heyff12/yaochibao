@@ -29,7 +29,7 @@ const successHalfService = () => {
   const data = {
     status: 200,
     data: {
-      amount: 1200,
+      amount: 100,
       bills: [
         {
           bid: "00001",
@@ -129,9 +129,12 @@ describe("Component", () => {
     const noData = wrapper.find("#noData");
     const serverError = wrapper.find("#serverError");
     const listDom = wrapper.find("#list");
+    const amountDom = wrapper.find(".amount span");
+
     expect(noData.exists()).toBeTruthy();
     expect(serverError.exists()).toBeFalsy();
     expect(listDom.exists()).toBeFalsy();
+    expect(amountDom.text()).toBe("-");
   });
 
   test("show 3 item when bills's length is 3", async () => {
@@ -147,10 +150,13 @@ describe("Component", () => {
     const noData = wrapper.find("#noData");
     const serverError = wrapper.find("#serverError");
     const listDom = wrapper.findAll(".bill-item");
+    const amountDom = wrapper.find(".amount span");
+
     console.log(wrapper.html());
     expect(listDom.length).toBe(3);
     expect(noData.exists()).toBeFalsy();
     expect(serverError.exists()).toBeFalsy();
+    expect(amountDom.text()).toBe("¥100.00");
   });
 
   test("show 5 item when bills's length is 5", async () => {
@@ -166,9 +172,12 @@ describe("Component", () => {
     const noData = wrapper.find("#noData");
     const serverError = wrapper.find("#serverError");
     const listDom = wrapper.findAll(".bill-item");
+    const amountDom = wrapper.find(".amount span");
+
     expect(listDom.length).toBe(5);
     expect(noData.exists()).toBeFalsy();
     expect(serverError.exists()).toBeFalsy();
+    expect(amountDom.text()).toBe("¥1,200.00");
   });
 
   test("show server error when service error", async () => {
@@ -182,8 +191,12 @@ describe("Component", () => {
     const noData = wrapper.find("#noData");
     const serverError = wrapper.find("#serverError");
     const listDom = wrapper.find("#list");
+    const amountDom = wrapper.find(".amount span");
+    console.log(wrapper.html());
+
     expect(noData.exists()).toBeFalsy();
     expect(serverError.exists()).toBeTruthy();
     expect(listDom.exists()).toBeFalsy();
+    expect(amountDom.text()).toBe("¥1,200.00");
   });
 });
