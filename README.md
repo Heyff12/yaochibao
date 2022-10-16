@@ -38,7 +38,11 @@ yarn test
 ```
 yarn test-api
 ```
+### UI测试
 
+```
+yarn cypress:open
+```
 ### mock server
 ```
 yarn mock-serve
