@@ -1,15 +1,28 @@
 <template>
   <section>
-    <h2 class="page-title">结算详情页</h2>
+    <h2 class="page-title">
+      结算详情页
+    </h2>
     <section v-if="getSettleDetailSuccess">
       <section class="amount">
         当前余额：<span>{{ formatAmount(settleDetail.amount) }}</span>
       </section>
 
-      <section v-if="bills.length" id="list" class="settle-detail">
-        <section v-for="bill in bills" :key="bill.bid" class="bill-item">
+      <section
+        v-if="bills.length"
+        id="list"
+        class="settle-detail"
+      >
+        <section
+          v-for="bill in bills"
+          :key="bill.bid"
+          class="bill-item"
+        >
           <section class="pic">
-            <img :src="bill.thumbnail" alt="" />
+            <img
+              :src="bill.thumbnail"
+              alt=""
+            >
           </section>
           <section class="desc">
             <p class="title">
@@ -19,9 +32,7 @@
               {{ bill.detail }}
             </p>
             <p class="other">
-              <span
-                >费用：<i>{{ formatAmount(bill.price) }}</i></span
-              >
+              <span>费用：<i>{{ formatAmount(bill.price) }}</i></span>
             </p>
           </section>
         </section>
@@ -29,10 +40,22 @@
           总记流水{{ settleDetail.billsCount }}条
         </section>
       </section>
-      <section v-else id="noData" class="tips">对不起，暂无数据！</section>
+      <section
+        v-else
+        id="noData"
+        class="tips"
+      >
+        对不起，暂无数据！
+      </section>
     </section>
 
-    <section v-else id="serverError" class="tips">服务异常，请稍后再试</section>
+    <section
+      v-else
+      id="serverError"
+      class="tips"
+    >
+      服务异常，请稍后再试
+    </section>
   </section>
 </template>
 
