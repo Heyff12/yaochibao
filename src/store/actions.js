@@ -1,10 +1,10 @@
-import api from "../api";
+import service from "../service";
 import TYPES from "./types";
 
 const actions = {
   async getAuctionList({ commit }) {
     try {
-      const data = await api.getAuctionList();
+      const data = await service.getAuctionList();
       commit(TYPES.SET_AUCTION_LIST, {
         auctionList: data.slice(0, 5),
         isHttpSuccess: true,
