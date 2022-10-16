@@ -6,7 +6,7 @@ import getters from "./getters";
 const debug = process.env.NODE_ENV !== "production";
 
 const state = () => ({
-  settleDetail: [],
+  settleDetail: { bills: [] },
   getSettleDetailSuccess: true,
 });
 

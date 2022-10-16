@@ -146,7 +146,7 @@ describe("Component", () => {
     await flushPromises();
     const noData = wrapper.find("#noData");
     const serverError = wrapper.find("#serverError");
-    const listDom = wrapper.findAll(".auction-item");
+    const listDom = wrapper.findAll(".bill-item");
     console.log(wrapper.html());
     expect(listDom.length).toBe(3);
     expect(noData.exists()).toBeFalsy();
@@ -165,7 +165,7 @@ describe("Component", () => {
     await flushPromises();
     const noData = wrapper.find("#noData");
     const serverError = wrapper.find("#serverError");
-    const listDom = wrapper.findAll(".auction-item");
+    const listDom = wrapper.findAll(".bill-item");
     expect(listDom.length).toBe(5);
     expect(noData.exists()).toBeFalsy();
     expect(serverError.exists()).toBeFalsy();
