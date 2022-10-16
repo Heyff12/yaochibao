@@ -1,17 +1,17 @@
-import api from "../../src/api";
+import service from "../../src/service";
 
 describe("Api test", () => {
-  describe("getAuctionList", () => {
+  describe("getSettleDetail", () => {
     test("return 3 auction items", async () => {
-      const data = await api.getAuctionList();
+      const data = await service.getSettleDetail();
 
-      expect(data.length).toBe(3);
+      expect(data.bills.length).toBe(3);
     });
 
     test("return error", async () => {
       const fn = jest.fn();
       try {
-        await api.getAuctionList("test");
+        await service.getSettleDetail("test");
       } catch (err) {
         console.log(err);
         fn();

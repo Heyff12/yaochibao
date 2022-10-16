@@ -1,9 +1,9 @@
 import TYPES from "./types";
 
 const mutations = {
-  [TYPES.SET_AUCTION_LIST](state, { auctionList, isHttpSuccess }) {
-    state.auctionList = auctionList;
-    state.getAuctionListSuccess = isHttpSuccess;
+  [TYPES.SET_SETTLE_DETAIL](state, { settleDetail, isHttpSuccess }) {
+    state.settleDetail = settleDetail;
+    state.getSettleDetailSuccess = isHttpSuccess;
   },
 };
 export default mutations;

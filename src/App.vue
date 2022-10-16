@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h1>拍一拍</h1>
+    <h1>要吃饱</h1>
     <router-view />
   </section>
 </template>

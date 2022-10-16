@@ -6,8 +6,8 @@ import getters from "./getters";
 const debug = process.env.NODE_ENV !== "production";
 
 const state = () => ({
-  auctionList: [],
-  getAuctionListSuccess: true,
+  settleDetail: [],
+  getSettleDetailSuccess: true,
 });
 
 const store = createStore({

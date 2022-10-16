@@ -1,34 +1,43 @@
 <template>
   <section>
-    <section v-if="getAuctionListSuccess">
+    <h2 class="page-title">
+      结算详情页
+    </h2>
+    <section v-if="getSettleDetailSuccess">
+      <section class="amount">
+        当前余额：<span>{{ formatAmount(settleDetail.amount) }}</span>
+      </section>
+
       <section
-        v-if="auctionList.length"
+        v-if="bills.length"
         id="list"
-        class="auction-list"
+        class="settle-detail"
       >
         <section
-          v-for="auction in auctionList"
-          :key="auction.aid"
-          class="auction-item"
+          v-for="bill in bills"
+          :key="bill.bid"
+          class="bill-item"
         >
           <section class="pic">
             <img
-              :src="auction.thumbnail"
+              :src="bill.thumbnail"
               alt=""
             >
           </section>
           <section class="desc">
             <p class="title">
-              <a href="#">{{ auction.name }}</a>
+              <a href="#">{{ bill.name }}</a>
             </p>
             <p class="detail">
-              {{ auction.detail }}
+              {{ bill.detail }}
             </p>
             <p class="other">
-              <span>类型：<i>{{ auction.type }}</i></span>
-              <span>估值：<i>￥{{ auction.price }}</i></span>
+              <span>费用：<i>{{ formatAmount(bill.price) }}</i></span>
             </p>
           </section>
+        </section>
+        <section class="bill-count">
+          总记流水{{ settleDetail.billsCount }}条
         </section>
       </section>
       <section
@@ -36,7 +45,7 @@
         id="noData"
         class="tips"
       >
-        对不起，当前没有可以竞买的拍品
+        对不起，暂无数据！
       </section>
     </section>
 
@@ -54,28 +63,55 @@
 import { mapState } from "vuex";
 
 export default {
-  name: "AuctionList",
-  computed: mapState({
-    auctionList: (state) => state.auctionList,
-    getAuctionListSuccess: (state) => state.getAuctionListSuccess,
-  }),
+  name: "SettleDetail",
+  computed: {
+    ...mapState({
+      settleDetail: (state) => state.settleDetail,
+      getSettleDetailSuccess: (state) => state.getSettleDetailSuccess,
+    }),
+    bills() {
+      return this.settleDetail.bills || [];
+    },
+  },
   created() {
-    this.getAuctionList();
+    this.getSettleDetail();
   },
   methods: {
-    getAuctionList() {
-      this.$store.dispatch("getAuctionList");
+    getSettleDetail() {
+      this.$store.dispatch("getSettleDetail");
+    },
+    formatAmount(amount) {
+      if (amount === 0) {
+        return "-";
+      }
+      const options = {
+        style: "currency",
+        currency: "CNY",
+      };
+      return amount.toLocaleString("zh-CH", options);
     },
   },
 };
 </script>
 
 <style lang="less">
-.auction-list {
+@import "../styles/variables.less";
+.page-title {
+  text-align: center;
+}
+.amount {
+  text-align: center;
+  span {
+    font-size: 18px;
+    color: @themeColor;
+    font-weight: bold;
+  }
+}
+.settle-detail {
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
-  .auction-item {
+  .bill-item {
     width: 100%;
     margin-bottom: 20px;
     padding-bottom: 15px;

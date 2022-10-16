@@ -2,17 +2,17 @@ import service from "../service";
 import TYPES from "./types";
 
 const actions = {
-  async getAuctionList({ commit }) {
+  async getSettleDetail({ commit }) {
     try {
-      const data = await service.getAuctionList();
-      commit(TYPES.SET_AUCTION_LIST, {
-        auctionList: data.slice(0, 5),
+      const data = await service.getSettleDetail();
+      commit(TYPES.SET_SETTLE_DETAIL, {
+        settleDetail: data,
         isHttpSuccess: true,
       });
     } catch (e) {
       console.error(e);
-      commit(TYPES.SET_AUCTION_LIST, {
-        auctionList: [],
+      commit(TYPES.SET_SETTLE_DETAIL, {
+        settleDetail: [],
         isHttpSuccess: false,
       });
     }

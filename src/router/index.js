@@ -1,15 +1,15 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 
-const AuctionList = () => import("../views/auctionList");
+const SettleDetail = () => import("../views/settleDetail");
 const routes = [
   {
     path: "/",
-    redirect: "/list",
+    redirect: "/settle-detail",
   },
   {
-    path: "/list",
-    name: "AuctionList",
-    component: AuctionList,
+    path: "/settle-detail",
+    name: "SettleDetail",
+    component: SettleDetail,
   },
 ];
 

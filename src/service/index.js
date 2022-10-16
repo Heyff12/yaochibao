@@ -7,11 +7,11 @@ const apiPath = {
 const baseUrl = apiPath[process.env.NODE_ENV];
 
 export default {
-  async getAuctionList(testPath) {
+  async getSettleDetail(testPath) {
     try {
       const currentPath = testPath
-        ? `auction-bidder${testPath}`
-        : "auction-bidder";
+        ? `settle-detail${testPath}`
+        : "settle-detail";
       const { data } = await axios.get(`${baseUrl}/${currentPath}`);
       return data;
     } catch (e) {

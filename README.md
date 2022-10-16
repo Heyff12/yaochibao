@@ -28,7 +28,7 @@ pre-commit-- yarn lint
 pre-push-- yarn test & yarn build
 commit-msg: type: message
 
-### 组建测试
+### 单元测试
 ```
 yarn test
 ```
@@ -38,6 +38,12 @@ yarn test
 ```
 yarn test-api
 ```
+
+### mock server
+```
+yarn mock-serve
+```
+打开mock-serve,可以调整数据
 ### 备注
 * 完善测试--文件名显示错误
 * 关闭json-server服务
