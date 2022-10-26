@@ -1,5 +1,5 @@
 {
-  "settle-detail": {
+  "merchant-settled": {
     "amount": 1200,
     "bills": [
       {

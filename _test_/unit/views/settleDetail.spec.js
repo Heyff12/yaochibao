@@ -116,6 +116,11 @@ const successOverFullService = () => {
 };
 
 describe("Component", () => {
+  const mockRoute = {
+    params: {
+      sid: "1234",
+    },
+  };
   test("show nodata when bills is empty", async () => {
     jest
       .spyOn(service, "getSettleDetail")
@@ -123,6 +128,9 @@ describe("Component", () => {
     const wrapper = mount(Component, {
       global: {
         plugins: [store],
+        mocks: {
+          $route: mockRoute,
+        },
       },
     });
     await flushPromises();
@@ -144,6 +152,9 @@ describe("Component", () => {
     const wrapper = mount(Component, {
       global: {
         plugins: [store],
+        mocks: {
+          $route: mockRoute,
+        },
       },
     });
     await flushPromises();
@@ -166,6 +177,9 @@ describe("Component", () => {
     const wrapper = mount(Component, {
       global: {
         plugins: [store],
+        mocks: {
+          $route: mockRoute,
+        },
       },
     });
     await flushPromises();
@@ -185,6 +199,9 @@ describe("Component", () => {
     const wrapper = mount(Component, {
       global: {
         plugins: [store],
+        mocks: {
+          $route: mockRoute,
+        },
       },
     });
     await flushPromises();

@@ -1,13 +1,19 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 
 const SettleDetail = () => import("../views/settleDetail");
+const userCenter = () => import("../views/userCenter");
 const routes = [
   {
     path: "/",
-    redirect: "/settle-detail",
+    redirect: { name: "UserCenter" },
   },
   {
-    path: "/settle-detail",
+    path: "/user-center",
+    name: "UserCenter",
+    component: userCenter,
+  },
+  {
+    path: "/settle-detail/:sid",
     name: "SettleDetail",
     component: SettleDetail,
   },

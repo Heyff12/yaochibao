@@ -16,6 +16,7 @@ module.exports = {
     "<rootDir>/src/**/*.vue",
     "<rootDir>/src/utils/**/*.js",
     "!**/node_modules/**",
+    "!<rootDir>/src/views/userCenter.vue",
   ],
   coverageDirectory: "<rootDir>/coverage",
   coverageThreshold: {

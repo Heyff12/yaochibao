@@ -85,7 +85,8 @@ export default {
   },
   methods: {
     getSettleDetail() {
-      this.$store.dispatch("getSettleDetail");
+      const sid = this.$route.params.sid;
+      this.$store.dispatch("getSettleDetail", { sid });
     },
     formatAmount(amount) {
       if (amount === 0 || !amount) {
